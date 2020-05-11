@@ -1,37 +1,36 @@
-let amount = prompt("How much amount you want to convert?")
-
-let from = prompt("Which currency do you have?")
-
-let to = prompt("Which currency do you have?")
-
-let currencyRatio = 23161.39
-
-let result = 0
-
-if (from === "USD" && to === "VND") {
-    result = USDToVND()
-} else if (from === "VND" && to === "USD") {
-    result = VNDToUSD
-} else {
-    console.log("You choose the wrong currency")
+const currencyRatio = {
+    USD: 1,
+    VND: 23400.50,
+    KRW: 1223.85,
+    IDR: 14925.05,
+    EUR: 0.93
 }
 
-function USDToVND() {
-    return amount * currencyRatio
-
+let strAmount;
+while (!parseInt(strAmount)) {
+    strAmount = prompt("How much amount you want to convert?");
 }
 
-function VNDToUSD() {
-    return amount / currencyRatio
+const amount = parseInt(strAmount);
+const from = prompt("Which currency do you have?");
+const to = prompt("Which currency do you have?");
+
+if (!currencyRatio[from] || !currencyRatio[to]) {
+    console.log("Unsupported currency!!!");
+
+} else if (currencyRatio[from] && currencyRatio[to]) {
+    // VND= 50000 / VNDratio(23000)
+    // USD= 2 * EURratio(0.93)
+    // ===>  result = amount / fromratio * toratio
+
+    const result = amount / currencyRatio[from] * currencyRatio[to];
+    console.log(from, "to", to, "is", formatCurrency(to, result));
 }
 
-console.log(from, "to", to, "is", result)
-
-// function formatCurrency(type, value) {
-//     const formatter = new Intl.NumberFormat(type, {
-//         currency: type,
-//         style: "currency"
-//     });
-//     return formatter.format(value)
-
-// }
+function formatCurrency(type, value) {
+    const formatter = new Intl.NumberFormat(type, {
+        currency: type,
+        style: "currency"
+    });
+    return formatter.format(value)
+}
