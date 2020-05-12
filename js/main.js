@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         EUR: 0.93
     }
 
-    let convertBtn = document.getElementById("btnABC");
+    let convertBtn = document.getElementById("btnConvertCurrency");
     convertBtn.addEventListener("click", () => { convertCurrency() });
 
     const result = document.getElementById("resultConvertCurrency");
@@ -17,8 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const from = document.getElementById("currencyFromList").value;
         const to = document.getElementById("currencyToList").value;
         const result = amount.value / currencyRatio[from] * currencyRatio[to];
-        document.getElementById("resultConvertCurrency").innerHTML = `${amount.value} ${from} is ${formatCurrency(to,result)}`;
-        // console.log(from, "to", to, "is", formatCurrency(to, result));
+        document.getElementById("resultConvertCurrency").innerHTML = `${amount.value} ${from} to ${to} is ${formatCurrency(to,result)}`;
     }
 
     function formatCurrency(type, value) {
@@ -31,10 +30,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function switchCurrency() {
-    const from = document.getElementById("currencyFromList").value;
-    const to = document.getElementById("currencyToList").value;
-
+    const start = document.getElementById("currencyFromList").value;
+    const end = document.getElementById("currencyToList").value;
+    document.getElementById("currencyFromList").value = end;
+    document.getElementById("currencyToList").value = start;
 }
+
+let changeBtn = document.getElementById("changeCurrency");
+changeBtn.addEventListener("click", () => { switchCurrency() });
 
 // let strAmount;
 // while (!parseInt(strAmount)) {

@@ -13,50 +13,67 @@
 <body>
     <nav>
         <img src="img/logo.png" />
-
-    </nav>
-
-    <section>
         <h1>The World's Trusted Currency Website</h1>
+    </nav>
+    <section>
+        <h2 class="text-center">Currency Convert</h2>
         <div class="container">
-            <form>
-                <div class="form-row amount-part">
-                    <div class="form-group ">
-                        <label for="inputAmount">Amount</label>
-                        <input type="number" class="form-control" id="amountInput">
-                    </div>
-                    <div class="form-group">
-                        <p>From:</p>
-                        <select id="currencyFromList">
+            <div class="form-row">
+                <div class="form-group col-4 ">
+                    <label for="inputAmount">Amount</label>
+                </div>
+                <div class="form-group col-2 ">
+                    <label for="currencyFrom">From</label>
+                </div>
+                <div class="form-group col-2 offset-2 ">
+                    <label for="currencyTo">To</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <input type="number" class="form-control" id="amountInput">
+                </div>
+                <div class="form-group col-2">
+                    <select id="currencyFromList">
                         <option value="USD">USD</option>
                         <option value="VND">VND</option>
                         <option value="EUR">EUR</option>
                         <option value="KRW">KRW</option>
                      </select>
-                    </div>
-                    <div class="form-group">
-                        <i id="refeshIcon" class="fas fa-sync-alt"></i>
-                    </div>
-                    <div class="form-group">
-                        <p>To:</p>
-                        <select id="currencyToList">
-                            <option value="USD">USD</option>
-                            <option value="VND">VND</option>
-                            <option value="EUR">EUR</option>
-                            <option value="KRW">KRW</option>
-                        </select>
-                    </div>
                 </div>
-            </form>
-            <button id="btnABC"> Convert</button>
-            <p id="resultConvertCurrency">Result will be here</p>
+                <div class="form-group col-2">
+                    <i id="changeCurrency" class="fas fa-sync-alt refesh-icon-size "></i>
+                </div>
+                <div class="form-group col-2">
+                    <select id="currencyToList">
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                        <option value="EUR">EUR</option>
+                        <option value="KRW">KRW</option>
+                     </select>
+                </div>
+                <div class="form-group col-2">
+                    <i id="btnConvertCurrency" class="fas fa-chevron-right"></i></i>
+                </div>
+                <p id="resultConvertCurrency" class="result-part"></p>
+            </div>
         </div>
     </section>
-
+    <section class="second-section">
+        <h2 class="text-center">Coin Change</h2>
+        <div class="container">
+            <div class="input-group">
+                <input type="text" class="form-control" aria-label="inputCoinChange" id="inputCoinChange">
+                <div class="input-group-append">
+                    <span class="input-group-text">VND</span>
+                </div>
+                <button> </button>
+    </section>
     <footer>
 
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/rocket.js"></script>
 </body>
 
 </html>
