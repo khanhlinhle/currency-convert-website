@@ -1,0 +1,9 @@
+.amount-part {
+    display: flex;
+    justify-content: space-around;
+}
+
+.refesh-icon-size {
+    display: flex;
+    justify-content: center;
+}
