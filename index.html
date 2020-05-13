@@ -59,16 +59,20 @@
             </div>
         </div>
     </section>
-    <section class="second-section">
+    <section>
         <h2 class="text-center">Coin Change</h2>
         <div class="container">
-            <div class="input-group">
-                <input type="text" class="form-control" aria-label="inputCoinChange" id="inputCoinChange">
-                <div class="input-group-append">
-                    <span class="input-group-text">VND</span>
+            <div class="coin-change-box">
+                <div class="input-group col-4">
+                    <input type="text" class="form-control" aria-label="inputCoinChange" id="inputCoinChange">
+                    <div class="input-group-append">
+                        <span class="input-group-text">VND</span>
+                    </div>
+                </div>
+                <div class="input-group col-4 offset-2">
+                    <button onclick="exchange()">Change</button>
                 </div>
             </div>
-            <button onclick="exchange()">Change</button>
             <div id="resultCoinChange">You have:</div>
     </section>
     <footer>

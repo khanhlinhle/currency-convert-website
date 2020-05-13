@@ -34,13 +34,13 @@ function exchange() {
     }
 
     document.getElementById("resultCoinChange").innerHTML =
-        `You have: ${result.m500} 500k and 
-                ${result.m200} 200k and 
-                ${result.m100} 100k and
-                ${result.m50} 50k and
-                ${result.m20} 20k and
-                ${result.m10} 10k and
-                ${result.m5} 5k and
-                ${result.m2} 2k and
-                ${result.m1} 1k and`;
+        `You have: 500k: ${result.m500} tờ  & 
+                200k: ${result.m200} tờ & 
+                100k: ${result.m100} tờ &
+                50k: ${result.m50} tờ &
+                20k: ${result.m20} tờ &
+                10k: ${result.m10} tờ &
+                5k: ${result.m5} tờ &
+                2k: ${result.m2} tờ &
+                1K: ${result.m1} tờ`;
 }

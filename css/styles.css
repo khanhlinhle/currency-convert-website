@@ -22,7 +22,7 @@ section {
     margin-bottom: 50px;
 }
 
-.input-group {
+.coin-change-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
