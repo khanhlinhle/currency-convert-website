@@ -14,42 +14,33 @@ let result = {
     m1: 0
 };
 
+function exchange() {
 
+    let exchangeAmount = document.getElementById("inputCoinChange").value;
 
-function exchange(amount) {
-    // reset all money count to 0
     for (let i = 0; i < result.length; i++) {
         result[i] = 0;
     }
-    // change coin
-    const amount = document.getElementById("inphutCoinChange");
-    while (amount > 0) {
+
+    while (exchangeAmount > 0) {
         for (let i = 0; i < moneyTypeArray.length; i++) {
             const moneyType = moneyTypeArray[i];
-            if (amount >= moneyType) {
+            if (exchangeAmount >= moneyType) {
                 result["m" + moneyType] = result["m" + moneyType] + 1;
-                amount = amount - moneyType;
+                exchangeAmount = exchangeAmount - moneyType;
                 break;
             }
         }
     }
 
-    return result;
+    document.getElementById("resultCoinChange").innerHTML =
+        `You have: ${result.m500} 500k and 
+                ${result.m200} 200k and 
+                ${result.m100} 100k and
+                ${result.m50} 50k and
+                ${result.m20} 20k and
+                ${result.m10} 10k and
+                ${result.m5} 5k and
+                ${result.m2} 2k and
+                ${result.m1} 1k and`;
 }
-// document.getElementById("result").innerHTML 
-
-// example
-let rs = exchange(599);
-console.log("rs");
-console.log("Số tờ 500 là " + rs.m500);
-console.log("Số tờ 200 là " + rs.m200);
-console.log("Số tờ 100 là " + rs.m100);
-console.log("Số tờ 100 là " + rs.m50);
-console.log("Số tờ 100 là " + rs.m20);
-console.log("Số tờ 100 là " + rs.m10);
-console.log("Số tờ 100 là " + rs.m5);
-console.log("Số tờ 100 là " + rs.m2);
-console.log("Số tờ 100 là " + rs.m1);
-// same with line 26
-// ...
-// end of example
